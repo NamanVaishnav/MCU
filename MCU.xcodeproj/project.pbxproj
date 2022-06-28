@@ -15,6 +15,16 @@
 		91313C2C286B45A1004D1312 /* MCUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C2B286B45A1004D1312 /* MCUTests.swift */; };
 		91313C36286B45A1004D1312 /* MCUUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C35286B45A1004D1312 /* MCUUITests.swift */; };
 		91313C38286B45A1004D1312 /* MCUUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C37286B45A1004D1312 /* MCUUITestsLaunchTests.swift */; };
+		91313C4C286B497D004D1312 /* MCUConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C4B286B497D004D1312 /* MCUConstants.swift */; };
+		91313C4D286B497D004D1312 /* MCUConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C4B286B497D004D1312 /* MCUConstants.swift */; };
+		91313C4E286B497D004D1312 /* MCUConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C4B286B497D004D1312 /* MCUConstants.swift */; };
+		91313C51286B49FA004D1312 /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C50286B49FA004D1312 /* Dictionary+Ext.swift */; };
+		91313C52286B49FA004D1312 /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C50286B49FA004D1312 /* Dictionary+Ext.swift */; };
+		91313C53286B49FA004D1312 /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C50286B49FA004D1312 /* Dictionary+Ext.swift */; };
+		91313C5A286B4A64004D1312 /* MCUNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C59286B4A64004D1312 /* MCUNetwork.swift */; };
+		91313C5B286B4A64004D1312 /* MCUNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C59286B4A64004D1312 /* MCUNetwork.swift */; };
+		91313C5C286B4A64004D1312 /* MCUNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C59286B4A64004D1312 /* MCUNetwork.swift */; };
+		91313C5F286B4A94004D1312 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 91313C5E286B4A94004D1312 /* Moya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +57,9 @@
 		91313C31286B45A1004D1312 /* MCUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MCUUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91313C35286B45A1004D1312 /* MCUUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCUUITests.swift; sourceTree = "<group>"; };
 		91313C37286B45A1004D1312 /* MCUUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCUUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		91313C4B286B497D004D1312 /* MCUConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCUConstants.swift; sourceTree = "<group>"; };
+		91313C50286B49FA004D1312 /* Dictionary+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Ext.swift"; sourceTree = "<group>"; };
+		91313C59286B4A64004D1312 /* MCUNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCUNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91313C5F286B4A94004D1312 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,8 +111,7 @@
 		91313C13286B459F004D1312 /* MCU */ = {
 			isa = PBXGroup;
 			children = (
-				91313C14286B459F004D1312 /* AppDelegate.swift */,
-				91313C16286B459F004D1312 /* SceneDelegate.swift */,
+				91313C49286B494F004D1312 /* Utility */,
 				91313C46286B46E0004D1312 /* Misc */,
 				91313C22286B45A1004D1312 /* Info.plist */,
 			);
@@ -125,11 +138,47 @@
 		91313C46286B46E0004D1312 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				91313C14286B459F004D1312 /* AppDelegate.swift */,
+				91313C16286B459F004D1312 /* SceneDelegate.swift */,
 				91313C1F286B45A1004D1312 /* LaunchScreen.storyboard */,
 				91313C1A286B459F004D1312 /* Main.storyboard */,
 				91313C1D286B45A1004D1312 /* Assets.xcassets */,
 			);
 			name = Misc;
+			sourceTree = "<group>";
+		};
+		91313C49286B494F004D1312 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				91313C58286B4A47004D1312 /* NetworkClasses */,
+				91313C4F286B49DB004D1312 /* Helpers */,
+				91313C4A286B495E004D1312 /* Contants */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		91313C4A286B495E004D1312 /* Contants */ = {
+			isa = PBXGroup;
+			children = (
+				91313C4B286B497D004D1312 /* MCUConstants.swift */,
+			);
+			path = Contants;
+			sourceTree = "<group>";
+		};
+		91313C4F286B49DB004D1312 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				91313C50286B49FA004D1312 /* Dictionary+Ext.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		91313C58286B4A47004D1312 /* NetworkClasses */ = {
+			isa = PBXGroup;
+			children = (
+				91313C59286B4A64004D1312 /* MCUNetwork.swift */,
+			);
+			path = NetworkClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +197,9 @@
 			dependencies = (
 			);
 			name = MCU;
+			packageProductDependencies = (
+				91313C5E286B4A94004D1312 /* Moya */,
+			);
 			productName = MCU;
 			productReference = 91313C11286B459F004D1312 /* MCU.app */;
 			productType = "com.apple.product-type.application";
@@ -220,6 +272,9 @@
 				Base,
 			);
 			mainGroup = 91313C08286B459F004D1312;
+			packageReferences = (
+				91313C5D286B4A94004D1312 /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = 91313C12286B459F004D1312 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -264,7 +319,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				91313C15286B459F004D1312 /* AppDelegate.swift in Sources */,
+				91313C51286B49FA004D1312 /* Dictionary+Ext.swift in Sources */,
+				91313C4C286B497D004D1312 /* MCUConstants.swift in Sources */,
 				91313C17286B459F004D1312 /* SceneDelegate.swift in Sources */,
+				91313C5A286B4A64004D1312 /* MCUNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +331,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				91313C2C286B45A1004D1312 /* MCUTests.swift in Sources */,
+				91313C52286B49FA004D1312 /* Dictionary+Ext.swift in Sources */,
+				91313C5B286B4A64004D1312 /* MCUNetwork.swift in Sources */,
+				91313C4D286B497D004D1312 /* MCUConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +342,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				91313C38286B45A1004D1312 /* MCUUITestsLaunchTests.swift in Sources */,
+				91313C53286B49FA004D1312 /* Dictionary+Ext.swift in Sources */,
+				91313C4E286B497D004D1312 /* MCUConstants.swift in Sources */,
 				91313C36286B45A1004D1312 /* MCUUITests.swift in Sources */,
+				91313C5C286B4A64004D1312 /* MCUNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +674,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		91313C5D286B4A94004D1312 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		91313C5E286B4A94004D1312 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 91313C5D286B4A94004D1312 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 91313C09286B459F004D1312 /* Project object */;
 }
