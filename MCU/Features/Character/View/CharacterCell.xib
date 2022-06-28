@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="CharacterCell" id="gTV-IL-0wX" customClass="CharacterCell" customModule="Marvel_Universe" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="223" height="236"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="223" height="236"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i2r-bn-LNc">
+                        <rect key="frame" x="0.0" y="0.0" width="223" height="236"/>
+                    </imageView>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpf-XE-IVr">
+                        <rect key="frame" x="12" y="190" width="30" height="34"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="i2r-bn-LNc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5W4-XP-Y4X"/>
+                <constraint firstAttribute="bottom" secondItem="i2r-bn-LNc" secondAttribute="bottom" id="8Q7-4c-bRi"/>
+                <constraint firstAttribute="trailing" secondItem="i2r-bn-LNc" secondAttribute="trailing" id="DEc-AU-V4s"/>
+                <constraint firstAttribute="bottom" secondItem="jpf-XE-IVr" secondAttribute="bottom" constant="12" id="O7m-Mm-m2J"/>
+                <constraint firstItem="i2r-bn-LNc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="P5G-uj-NoQ"/>
+                <constraint firstItem="jpf-XE-IVr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="RLZ-IQ-U6h"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jpf-XE-IVr" secondAttribute="trailing" constant="12" id="hjJ-SZ-x1L"/>
+            </constraints>
+            <size key="customSize" width="223" height="236"/>
+            <connections>
+                <outlet property="btnName" destination="jpf-XE-IVr" id="r4V-ea-Pva"/>
+                <outlet property="imgView" destination="i2r-bn-LNc" id="IfI-Tq-bU0"/>
+            </connections>
+            <point key="canvasLocation" x="261.59420289855075" y="111.83035714285714"/>
+        </collectionViewCell>
+    </objects>
+</document>

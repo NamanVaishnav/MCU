@@ -25,6 +25,19 @@
 		91313C5B286B4A64004D1312 /* MCUNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C59286B4A64004D1312 /* MCUNetwork.swift */; };
 		91313C5C286B4A64004D1312 /* MCUNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C59286B4A64004D1312 /* MCUNetwork.swift */; };
 		91313C5F286B4A94004D1312 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 91313C5E286B4A94004D1312 /* Moya */; };
+		91313C66286B545A004D1312 /* CharacterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C65286B545A004D1312 /* CharacterVC.swift */; };
+		91313C67286B545A004D1312 /* CharacterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C65286B545A004D1312 /* CharacterVC.swift */; };
+		91313C68286B545A004D1312 /* CharacterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C65286B545A004D1312 /* CharacterVC.swift */; };
+		91313C6B286B548B004D1312 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 91313C6A286B548B004D1312 /* SDWebImage */; };
+		91313C6D286B55B2004D1312 /* CompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C6C286B55B2004D1312 /* CompositionalLayout.swift */; };
+		91313C6E286B55B2004D1312 /* CompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C6C286B55B2004D1312 /* CompositionalLayout.swift */; };
+		91313C6F286B55B2004D1312 /* CompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C6C286B55B2004D1312 /* CompositionalLayout.swift */; };
+		91313C72286B565D004D1312 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91313C70286B565D004D1312 /* CharacterCell.xib */; };
+		91313C73286B565D004D1312 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91313C70286B565D004D1312 /* CharacterCell.xib */; };
+		91313C74286B565D004D1312 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91313C70286B565D004D1312 /* CharacterCell.xib */; };
+		91313C75286B565D004D1312 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C71286B565D004D1312 /* CharacterCell.swift */; };
+		91313C76286B565D004D1312 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C71286B565D004D1312 /* CharacterCell.swift */; };
+		91313C77286B565D004D1312 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C71286B565D004D1312 /* CharacterCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +73,10 @@
 		91313C4B286B497D004D1312 /* MCUConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCUConstants.swift; sourceTree = "<group>"; };
 		91313C50286B49FA004D1312 /* Dictionary+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Ext.swift"; sourceTree = "<group>"; };
 		91313C59286B4A64004D1312 /* MCUNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCUNetwork.swift; sourceTree = "<group>"; };
+		91313C65286B545A004D1312 /* CharacterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterVC.swift; sourceTree = "<group>"; };
+		91313C6C286B55B2004D1312 /* CompositionalLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositionalLayout.swift; sourceTree = "<group>"; };
+		91313C70286B565D004D1312 /* CharacterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
+		91313C71286B565D004D1312 /* CharacterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91313C6B286B548B004D1312 /* SDWebImage in Frameworks */,
 				91313C5F286B4A94004D1312 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,6 +129,7 @@
 		91313C13286B459F004D1312 /* MCU */ = {
 			isa = PBXGroup;
 			children = (
+				91313C60286B5078004D1312 /* Features */,
 				91313C49286B494F004D1312 /* Utility */,
 				91313C46286B46E0004D1312 /* Misc */,
 				91313C22286B45A1004D1312 /* Info.plist */,
@@ -150,6 +169,7 @@
 		91313C49286B494F004D1312 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				91313C6C286B55B2004D1312 /* CompositionalLayout.swift */,
 				91313C58286B4A47004D1312 /* NetworkClasses */,
 				91313C4F286B49DB004D1312 /* Helpers */,
 				91313C4A286B495E004D1312 /* Contants */,
@@ -181,6 +201,40 @@
 			path = NetworkClasses;
 			sourceTree = "<group>";
 		};
+		91313C60286B5078004D1312 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				91313C62286B50A1004D1312 /* Comic */,
+				91313C61286B5088004D1312 /* Character */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		91313C61286B5088004D1312 /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				91313C63286B50B3004D1312 /* View */,
+			);
+			path = Character;
+			sourceTree = "<group>";
+		};
+		91313C62286B50A1004D1312 /* Comic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Comic;
+			sourceTree = "<group>";
+		};
+		91313C63286B50B3004D1312 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				91313C71286B565D004D1312 /* CharacterCell.swift */,
+				91313C70286B565D004D1312 /* CharacterCell.xib */,
+				91313C65286B545A004D1312 /* CharacterVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -199,6 +253,7 @@
 			name = MCU;
 			packageProductDependencies = (
 				91313C5E286B4A94004D1312 /* Moya */,
+				91313C6A286B548B004D1312 /* SDWebImage */,
 			);
 			productName = MCU;
 			productReference = 91313C11286B459F004D1312 /* MCU.app */;
@@ -274,6 +329,7 @@
 			mainGroup = 91313C08286B459F004D1312;
 			packageReferences = (
 				91313C5D286B4A94004D1312 /* XCRemoteSwiftPackageReference "Moya" */,
+				91313C69286B548B004D1312 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 91313C12286B459F004D1312 /* Products */;
 			projectDirPath = "";
@@ -294,6 +350,7 @@
 				91313C21286B45A1004D1312 /* LaunchScreen.storyboard in Resources */,
 				91313C1E286B45A1004D1312 /* Assets.xcassets in Resources */,
 				91313C1C286B459F004D1312 /* Main.storyboard in Resources */,
+				91313C72286B565D004D1312 /* CharacterCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +358,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91313C73286B565D004D1312 /* CharacterCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +366,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91313C74286B565D004D1312 /* CharacterCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,10 +377,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91313C6D286B55B2004D1312 /* CompositionalLayout.swift in Sources */,
 				91313C15286B459F004D1312 /* AppDelegate.swift in Sources */,
 				91313C51286B49FA004D1312 /* Dictionary+Ext.swift in Sources */,
+				91313C75286B565D004D1312 /* CharacterCell.swift in Sources */,
 				91313C4C286B497D004D1312 /* MCUConstants.swift in Sources */,
 				91313C17286B459F004D1312 /* SceneDelegate.swift in Sources */,
+				91313C66286B545A004D1312 /* CharacterVC.swift in Sources */,
 				91313C5A286B4A64004D1312 /* MCUNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,7 +395,10 @@
 				91313C2C286B45A1004D1312 /* MCUTests.swift in Sources */,
 				91313C52286B49FA004D1312 /* Dictionary+Ext.swift in Sources */,
 				91313C5B286B4A64004D1312 /* MCUNetwork.swift in Sources */,
+				91313C76286B565D004D1312 /* CharacterCell.swift in Sources */,
+				91313C67286B545A004D1312 /* CharacterVC.swift in Sources */,
 				91313C4D286B497D004D1312 /* MCUConstants.swift in Sources */,
+				91313C6E286B55B2004D1312 /* CompositionalLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,10 +406,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91313C6F286B55B2004D1312 /* CompositionalLayout.swift in Sources */,
 				91313C38286B45A1004D1312 /* MCUUITestsLaunchTests.swift in Sources */,
 				91313C53286B49FA004D1312 /* Dictionary+Ext.swift in Sources */,
+				91313C77286B565D004D1312 /* CharacterCell.swift in Sources */,
 				91313C4E286B497D004D1312 /* MCUConstants.swift in Sources */,
 				91313C36286B45A1004D1312 /* MCUUITests.swift in Sources */,
+				91313C68286B545A004D1312 /* CharacterVC.swift in Sources */,
 				91313C5C286B4A64004D1312 /* MCUNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -684,6 +752,14 @@
 				kind = branch;
 			};
 		};
+		91313C69286B548B004D1312 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -691,6 +767,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 91313C5D286B4A94004D1312 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		91313C6A286B548B004D1312 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 91313C69286B548B004D1312 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
