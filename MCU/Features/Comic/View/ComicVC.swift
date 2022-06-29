@@ -35,6 +35,23 @@ class ComicVC: UIViewController {
         callAPI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .automatic
+    }
+    
+    /// register cell in collectionView
+    private func registerCell(){
+        // Register cell classes
+        self.collectionView!.register(UINib.init(nibName: "CharacterCell", bundle: nil), forCellWithReuseIdentifier: "CharacterCell")
+        self.collectionView!.register(UINib.init(nibName: "SkeletonCell", bundle: nil), forCellWithReuseIdentifier: "SkeletonCell")
+        self.collectionView!.register(UINib.init(nibName: "EmptyCell", bundle: nil), forCellWithReuseIdentifier: "EmptyCell")
+        self.collectionView!.register(UINib.init(nibName: "SearchHistoryCell", bundle: nil), forCellWithReuseIdentifier: "SearchHistoryCell")
+    }
+    
+    
+    /// configure search bar text field
     func configureSearchBarTextField() {
         searchBar.placeholder = "Search comic"
         searchBar.tintColor = UIColor.red // #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
@@ -55,6 +72,10 @@ class ComicVC: UIViewController {
         }
     }
     
+    /// execute network call to fetch list of comic
+    /// - Parameters:
+    ///   - searchQuery: string which is resposible to query data according to user search
+    ///   - filter: filter for comic timeline
     func callAPI(withSearch searchQuery: String = "", forFilter filter: FilterType = .thisMonth) {
         viewModelComic.getComics(searchCharacter: searchQuery, forFilter: filter) { arrComic in
             if arrComic.count > 0 {
@@ -67,6 +88,8 @@ class ComicVC: UIViewController {
         }
     }
     
+    /// action for filter
+    /// - Parameter sender: sender
     @IBAction func actionFilter(_ sender: Any) {
         
         let searchQuery = searchBar.text ?? ""
@@ -92,12 +115,19 @@ class ComicVC: UIViewController {
         btnFilter.showsMenuAsPrimaryAction = true
     }
     
+    
+    /// update collection view layout
+    /// - Parameter cellType: type of cell which will get rendered on collection view
     func updateLayput(forCellType cellType: MCUCellType) {
         self.cellType = cellType
-        self.collectionView.collectionViewLayout = self.createLayout()
-        self.collectionView.reloadData()
+        DispatchQueue.main.async {
+            self.collectionView.collectionViewLayout = self.createLayout()
+            self.collectionView.reloadData()
+        }
     }
     
+    /// create layout
+    /// - Returns: compostional layout
     func createLayout() -> UICollectionViewCompositionalLayout {
         switch cellType {
         case .skeletonCell, .normalCell, .searchingCell:
@@ -132,7 +162,6 @@ class ComicVC: UIViewController {
             return UICollectionViewCompositionalLayout(section: section)
         
         }
-
     }
 }
 
@@ -268,9 +297,10 @@ extension ComicVC: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if let searchQuery = searchBar.text, searchQuery.count > 0 {
+        if let searchQuery = searchBar.text, searchQuery.count > 0 , !arrSearchHistory.contains(searchQuery){
             arrSearchHistory.insert(searchQuery, at: 0)
         }
+        self.view.endEditing(true)
     }
     
     func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {

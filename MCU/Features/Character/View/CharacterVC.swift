@@ -244,9 +244,10 @@ extension CharacterVC: UISearchBarDelegate, UISearchResultsUpdating {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if let searchQuery = searchBar.text, searchQuery.count > 0 {
+        if let searchQuery = searchBar.text, searchQuery.count > 0, !arrSearchHistory.contains(searchQuery) {
             arrSearchHistory.insert(searchQuery, at: 0)
         }
+        self.view.endEditing(true)
     }
     
     func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
