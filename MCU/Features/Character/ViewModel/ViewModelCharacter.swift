@@ -7,6 +7,7 @@
 
 import Foundation
 import Moya
+import DataCache
 
 class ViewModelCharacter {
     
@@ -51,15 +52,44 @@ class ViewModelCharacter {
                             // append if already exist ( pagination )
                             self.arrCharacters.append(contentsOf: result)
                         }
+                        if searchQuery.count == 0 { // cache characters
+                            self.storeCharacterData(forArray: self.arrCharacters)
+                        }
                         completion(self.arrCharacters)
                     } else {
-                        completion(self.arrCharacters)
+                        completion(self.fetchCharacterData())
                     }
                 }
             case .failure(let err, _):
-                completion(self.arrCharacters)
+                completion(self.fetchCharacterData())
                 print(err.localizedDescription)
             }
+        }
+    }
+    
+    /// cache charcter data
+    /// - Parameter arrChar: list of character which came from network will be passed as a parameter to store on disk
+    fileprivate func storeCharacterData(forArray arrChar: [CharacterResult]) {
+        do {
+            try DataCache.instance.write(codable: arrChar, forKey: NetworkCache.character.rawValue)
+        } catch {
+            print("Write error \(error.localizedDescription)")
+        }
+    }
+    
+    /// fetch character data
+    /// - Returns: list of character will get returned which has bee stored earlient in case of network failiure
+    fileprivate func fetchCharacterData() -> [CharacterResult] {
+        do {
+            let arrcachedCharacters: [CharacterResult]? = try DataCache.instance.readCodable(forKey: NetworkCache.character.rawValue)
+            if let arrcachedCharacters = arrcachedCharacters, arrcachedCharacters.count > 0 {
+                return arrcachedCharacters
+            } else {
+                return []
+            }
+        } catch {
+            debugPrint("Character Read error \(error.localizedDescription)")
+            return []
         }
     }
 }

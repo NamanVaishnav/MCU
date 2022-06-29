@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "datacache",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/huynguyencong/DataCache.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "715d6b96a45d3889efef54a2a0afef9d4188dde0"
+      }
+    },
+    {
       "identity" : "moya",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Moya/Moya.git",

@@ -16,6 +16,7 @@
 		91297302286C8D38009958AB /* ViewModelComic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91297301286C8D38009958AB /* ViewModelComic.swift */; };
 		91297303286C8D38009958AB /* ViewModelComic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91297301286C8D38009958AB /* ViewModelComic.swift */; };
 		91297304286C8D38009958AB /* ViewModelComic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91297301286C8D38009958AB /* ViewModelComic.swift */; };
+		91297308286CD36A009958AB /* DataCache in Frameworks */ = {isa = PBXBuildFile; productRef = 91297307286CD36A009958AB /* DataCache */; };
 		91313C15286B459F004D1312 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C14286B459F004D1312 /* AppDelegate.swift */; };
 		91313C17286B459F004D1312 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C16286B459F004D1312 /* SceneDelegate.swift */; };
 		91313C1C286B459F004D1312 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91313C1A286B459F004D1312 /* Main.storyboard */; };
@@ -130,6 +131,7 @@
 			files = (
 				91313C6B286B548B004D1312 /* SDWebImage in Frameworks */,
 				91313C5F286B4A94004D1312 /* Moya in Frameworks */,
+				91297308286CD36A009958AB /* DataCache in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +359,7 @@
 			packageProductDependencies = (
 				91313C5E286B4A94004D1312 /* Moya */,
 				91313C6A286B548B004D1312 /* SDWebImage */,
+				91297307286CD36A009958AB /* DataCache */,
 			);
 			productName = MCU;
 			productReference = 91313C11286B459F004D1312 /* MCU.app */;
@@ -433,6 +436,7 @@
 			packageReferences = (
 				91313C5D286B4A94004D1312 /* XCRemoteSwiftPackageReference "Moya" */,
 				91313C69286B548B004D1312 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				91297306286CD36A009958AB /* XCRemoteSwiftPackageReference "DataCache" */,
 			);
 			productRefGroup = 91313C12286B459F004D1312 /* Products */;
 			projectDirPath = "";
@@ -880,6 +884,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		91297306286CD36A009958AB /* XCRemoteSwiftPackageReference "DataCache" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/huynguyencong/DataCache.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		91313C5D286B4A94004D1312 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -899,6 +911,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		91297307286CD36A009958AB /* DataCache */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 91297306286CD36A009958AB /* XCRemoteSwiftPackageReference "DataCache" */;
+			productName = DataCache;
+		};
 		91313C5E286B4A94004D1312 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 91313C5D286B4A94004D1312 /* XCRemoteSwiftPackageReference "Moya" */;

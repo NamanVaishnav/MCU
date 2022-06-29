@@ -7,6 +7,7 @@
 
 import Foundation
 import Moya
+import DataCache
 
 enum FilterType: String{
     case lastWeek
@@ -26,7 +27,7 @@ class ViewModelComic {
     /// size of response which we required in single request
     var pageSize = 10 // get 10 objects for instance
     /// list of characters which will be filled from network response
-    var arrCharacters: [ComicResult] = []
+    var arrComic: [ComicResult] = []
     /// network call cancellation
     var characterCancellation: Cancellable?
     
@@ -39,7 +40,7 @@ class ViewModelComic {
         guard !isFetching else {return}
         if offset == 0 {
             // empty list for first call i.e offset = 0
-            self.arrCharacters.removeAll()
+            self.arrComic.removeAll()
         }
         isFetching = true
         characterCancellation = Network.request(target: .comics(pageSize, offset, searchQuery, filter.rawValue), resultType: ModelComic.self) { result in
@@ -52,20 +53,51 @@ class ViewModelComic {
                     if let result = objResponse.data?.results {
                         if self.offset == 0 {
                             // fetch response from server for first fetch
-                            self.arrCharacters = result
+                            self.arrComic = result
                         } else {
                             // append if already exist ( pagination )
-                            self.arrCharacters.append(contentsOf: result)
+                            self.arrComic.append(contentsOf: result)
                         }
-                        completion(self.arrCharacters)
+                        if searchQuery.count == 0 { // cache characters
+                            self.storeComicData(forArray: self.arrComic)
+                        }
+                        completion(self.arrComic)
                     } else {
-                        completion(self.arrCharacters)
+                        completion(self.arrComic)
                     }
+                } else {
+                    completion(self.fetchComicData())
                 }
             case .failure(let err, _):
-                completion(self.arrCharacters)
+                completion(self.fetchComicData())
                 print(err.localizedDescription)
             }
+        }
+    }
+    
+    /// cache comic data
+    /// - Parameter arrChar: list of comic which came from network will be passed as a parameter to store on disk
+    fileprivate func storeComicData(forArray arrChar: [ComicResult]) {
+        do {
+            try DataCache.instance.write(codable: arrChar, forKey: NetworkCache.comic.rawValue)
+        } catch {
+            print("Write error \(error.localizedDescription)")
+        }
+    }
+    
+    /// fetch character data
+    /// - Returns: list of comics will get returned which has bee stored earlient in case of network failiure
+    fileprivate func fetchComicData() -> [ComicResult] {
+        do {
+            let arrcachedComic: [ComicResult]? = try DataCache.instance.readCodable(forKey: NetworkCache.comic.rawValue)
+            if let arrcachedComic = arrcachedComic, arrcachedComic.count > 0 {
+                return arrcachedComic
+            } else {
+                return []
+            }
+        } catch {
+            debugPrint("comic Read error \(error.localizedDescription)")
+            return []
         }
     }
 }
