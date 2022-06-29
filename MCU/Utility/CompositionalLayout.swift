@@ -8,12 +8,21 @@
 import Foundation
 import UIKit
 
+/// enum whether collectionView Layout flow either horizontal or vertical
 enum CompositionalGroupAlignment {
     case vertical
     case horizontal
 }
 
+/// composition layout to build cell layout on collectionview
 struct CompositionalLayout {
+    
+    /// create collection layout item
+    /// - Parameters:
+    ///   - width: width of item
+    ///   - height: height of item
+    ///   - spacing: spacing around an item
+    /// - Returns: describe item layout and return NSCollectionLayoutItem
     static func createItem(width: NSCollectionLayoutDimension,
                            height: NSCollectionLayoutDimension,
                            spacing: CGFloat) -> NSCollectionLayoutItem {
@@ -23,6 +32,14 @@ struct CompositionalLayout {
         return item
     }
     
+    
+    /// create collection layout group with multiple items
+    /// - Parameters:
+    ///   - alignment: define horizontal or vertical layout of group
+    ///   - width: width of group
+    ///   - height: height of group
+    ///   - items: number of items in group
+    /// - Returns: return entire collection layout group
     static func createGroup(alignment: CompositionalGroupAlignment,
                             width: NSCollectionLayoutDimension,
                             height: NSCollectionLayoutDimension,
@@ -35,6 +52,13 @@ struct CompositionalLayout {
         }
     }
     
+    /// create collection layout group with single items
+    /// - Parameters:
+    ///   - alignment: define horizontal or vertical layout of group
+    ///   - width: width of group
+    ///   - height: height of group
+    ///   - items: number of items in group
+    /// - Returns: return entire collection layout group
     static func createGroup(alignment: CompositionalGroupAlignment,
                             width: NSCollectionLayoutDimension,
                             height: NSCollectionLayoutDimension,

@@ -7,6 +7,11 @@
 
 import Foundation
 
+/// to merge to dictionary
+/// - Parameters:
+///   - left: left strinf
+///   - right: right value
+/// - Returns: combine dictionary
 public func + <KeyType, ValueType> (left: [KeyType: ValueType], right: [KeyType: ValueType]) -> [KeyType: ValueType] {
   var out = left
 

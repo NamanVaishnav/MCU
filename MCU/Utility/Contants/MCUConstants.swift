@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// MCU Constants  relavant to network
 enum MCUConstant {
     enum ListPageLimit {
         static let limit = 10
@@ -24,11 +25,13 @@ enum MCUConstant {
     }
 }
 
+/// result either success or failure
 enum Results<Value, Bool> {
     case success(Value, Bool)
     case failure(Error, Bool)
 }
 
+/// type of cell which will be rendered on collectionview
 enum MCUCellType {
     case skeletonCell
     case normalCell
@@ -37,6 +40,7 @@ enum MCUCellType {
     case searchHistoryCell
 }
 
+/// list of cache constants
 enum NetworkCache: String{
     case character
     case comic

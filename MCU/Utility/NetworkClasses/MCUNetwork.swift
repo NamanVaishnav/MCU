@@ -9,8 +9,10 @@ import Foundation
 import Moya
 import CryptoKit
 
+/// Moya provider
 let provider = MoyaProvider<Marvel>()
 
+/// enum for MCU calls
 enum Marvel {
     static private let publicKey = MCUConstant.APIKey.publicKey
     static private let privateKey = MCUConstant.APIKey.privateKey

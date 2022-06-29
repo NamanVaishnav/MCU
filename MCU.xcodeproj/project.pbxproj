@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		912972FA286C8C1A009958AB /* ComicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912972F7286C8C1A009958AB /* ComicVC.swift */; };
+		912972FB286C8C1A009958AB /* ComicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912972F7286C8C1A009958AB /* ComicVC.swift */; };
+		912972FC286C8C1A009958AB /* ComicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912972F7286C8C1A009958AB /* ComicVC.swift */; };
+		912972FD286C8C1A009958AB /* ModelComic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912972F9286C8C1A009958AB /* ModelComic.swift */; };
+		912972FE286C8C1A009958AB /* ModelComic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912972F9286C8C1A009958AB /* ModelComic.swift */; };
+		912972FF286C8C1A009958AB /* ModelComic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912972F9286C8C1A009958AB /* ModelComic.swift */; };
+		91297302286C8D38009958AB /* ViewModelComic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91297301286C8D38009958AB /* ViewModelComic.swift */; };
+		91297303286C8D38009958AB /* ViewModelComic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91297301286C8D38009958AB /* ViewModelComic.swift */; };
+		91297304286C8D38009958AB /* ViewModelComic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91297301286C8D38009958AB /* ViewModelComic.swift */; };
 		91313C15286B459F004D1312 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C14286B459F004D1312 /* AppDelegate.swift */; };
 		91313C17286B459F004D1312 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91313C16286B459F004D1312 /* SceneDelegate.swift */; };
 		91313C1C286B459F004D1312 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91313C1A286B459F004D1312 /* Main.storyboard */; };
@@ -82,6 +91,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		912972F7286C8C1A009958AB /* ComicVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicVC.swift; sourceTree = "<group>"; };
+		912972F9286C8C1A009958AB /* ModelComic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelComic.swift; sourceTree = "<group>"; };
+		91297301286C8D38009958AB /* ViewModelComic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelComic.swift; sourceTree = "<group>"; };
 		91313C11286B459F004D1312 /* MCU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91313C14286B459F004D1312 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91313C16286B459F004D1312 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +150,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		912972F6286C8C1A009958AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				912972F7286C8C1A009958AB /* ComicVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		912972F8286C8C1A009958AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				912972F9286C8C1A009958AB /* ModelComic.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		91297300286C8D2A009958AB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				91297301286C8D38009958AB /* ViewModelComic.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		91297305286C8D40009958AB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				91313C78286B60B6004D1312 /* ViewModelCharacter.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		91313C08286B459F004D1312 = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +290,7 @@
 		91313C61286B5088004D1312 /* Character */ = {
 			isa = PBXGroup;
 			children = (
+				91297305286C8D40009958AB /* ViewModel */,
 				91313C7C286B60E7004D1312 /* Model */,
 				91313C63286B50B3004D1312 /* View */,
 			);
@@ -255,6 +300,9 @@
 		91313C62286B50A1004D1312 /* Comic */ = {
 			isa = PBXGroup;
 			children = (
+				91297300286C8D2A009958AB /* ViewModel */,
+				912972F8286C8C1A009958AB /* Model */,
+				912972F6286C8C1A009958AB /* View */,
 			);
 			path = Comic;
 			sourceTree = "<group>";
@@ -265,7 +313,6 @@
 				91313C71286B565D004D1312 /* CharacterCell.swift */,
 				91313C70286B565D004D1312 /* CharacterCell.xib */,
 				91313C65286B545A004D1312 /* CharacterVC.swift */,
-				91313C78286B60B6004D1312 /* ViewModelCharacter.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -446,6 +493,9 @@
 				91313C79286B60B6004D1312 /* ViewModelCharacter.swift in Sources */,
 				91313C15286B459F004D1312 /* AppDelegate.swift in Sources */,
 				91313C51286B49FA004D1312 /* Dictionary+Ext.swift in Sources */,
+				912972FA286C8C1A009958AB /* ComicVC.swift in Sources */,
+				912972FD286C8C1A009958AB /* ModelComic.swift in Sources */,
+				91297302286C8D38009958AB /* ViewModelComic.swift in Sources */,
 				91313C75286B565D004D1312 /* CharacterCell.swift in Sources */,
 				91313C7E286B60F4004D1312 /* ModelCharacters.swift in Sources */,
 				91313C4C286B497D004D1312 /* MCUConstants.swift in Sources */,
@@ -463,8 +513,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				91313C2C286B45A1004D1312 /* MCUTests.swift in Sources */,
+				912972FE286C8C1A009958AB /* ModelComic.swift in Sources */,
 				91313C52286B49FA004D1312 /* Dictionary+Ext.swift in Sources */,
 				91313CAF286B6402004D1312 /* SearchHistoryCell.swift in Sources */,
+				912972FB286C8C1A009958AB /* ComicVC.swift in Sources */,
 				91313CA9286B6402004D1312 /* EmptyCell.swift in Sources */,
 				91313C5B286B4A64004D1312 /* MCUNetwork.swift in Sources */,
 				91313C76286B565D004D1312 /* CharacterCell.swift in Sources */,
@@ -473,6 +525,7 @@
 				91313C67286B545A004D1312 /* CharacterVC.swift in Sources */,
 				91313C4D286B497D004D1312 /* MCUConstants.swift in Sources */,
 				91313CA3286B6402004D1312 /* SkeletonCell.swift in Sources */,
+				91297303286C8D38009958AB /* ViewModelComic.swift in Sources */,
 				91313C6E286B55B2004D1312 /* CompositionalLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,6 +538,9 @@
 				91313C7B286B60B6004D1312 /* ViewModelCharacter.swift in Sources */,
 				91313C38286B45A1004D1312 /* MCUUITestsLaunchTests.swift in Sources */,
 				91313C53286B49FA004D1312 /* Dictionary+Ext.swift in Sources */,
+				912972FC286C8C1A009958AB /* ComicVC.swift in Sources */,
+				912972FF286C8C1A009958AB /* ModelComic.swift in Sources */,
+				91297304286C8D38009958AB /* ViewModelComic.swift in Sources */,
 				91313C77286B565D004D1312 /* CharacterCell.swift in Sources */,
 				91313C80286B60F4004D1312 /* ModelCharacters.swift in Sources */,
 				91313C4E286B497D004D1312 /* MCUConstants.swift in Sources */,
@@ -653,7 +709,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TR977S8V22;
+				DEVELOPMENT_TEAM = 54QU2WU97C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MCU/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -683,7 +739,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TR977S8V22;
+				DEVELOPMENT_TEAM = 54QU2WU97C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MCU/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

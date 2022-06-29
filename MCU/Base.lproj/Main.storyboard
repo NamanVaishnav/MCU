@@ -104,25 +104,83 @@
         <!--Comics-->
         <scene sceneID="qqK-3n-47k">
             <objects>
-                <viewController id="HJp-WL-Kpr" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ComicVC" id="HJp-WL-Kpr" customClass="ComicVC" customModule="MCU" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="khn-SJ-2R1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="i5c-7P-ure">
+                                <rect key="frame" x="0.0" y="139" width="414" height="674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TfJ-aO-5bK">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tIE-qc-GdP">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="OVL-cb-qWw">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="HJp-WL-Kpr" id="uYS-xy-2v7"/>
+                                    <outlet property="delegate" destination="HJp-WL-Kpr" id="N1M-7c-sBc"/>
+                                </connections>
+                            </collectionView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="XaX-rr-eHv">
+                                <rect key="frame" x="0.0" y="88" width="364" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xvq-ij-89W">
+                                <rect key="frame" x="364" y="88" width="50" height="51"/>
+                                <color key="tintColor" red="1" green="0.33725490200000002" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="camera.filters" catalog="system"/>
+                                <connections>
+                                    <action selector="actionFilter:" destination="HJp-WL-Kpr" eventType="touchUpInside" id="Lai-59-LEc"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="AEG-84-pq5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="XaX-rr-eHv" secondAttribute="trailing" constant="50" id="2EV-if-cIf"/>
+                            <constraint firstItem="i5c-7P-ure" firstAttribute="leading" secondItem="AEG-84-pq5" secondAttribute="leading" id="2IX-Rb-5oc"/>
+                            <constraint firstItem="XaX-rr-eHv" firstAttribute="top" secondItem="AEG-84-pq5" secondAttribute="top" id="3ks-O9-fiL"/>
+                            <constraint firstItem="i5c-7P-ure" firstAttribute="top" secondItem="XaX-rr-eHv" secondAttribute="bottom" id="A48-ZA-tQK"/>
+                            <constraint firstItem="AEG-84-pq5" firstAttribute="bottom" secondItem="i5c-7P-ure" secondAttribute="bottom" id="Cav-vC-bJZ"/>
+                            <constraint firstItem="i5c-7P-ure" firstAttribute="top" secondItem="Xvq-ij-89W" secondAttribute="bottom" id="UPS-Fw-jQi"/>
+                            <constraint firstItem="Xvq-ij-89W" firstAttribute="leading" secondItem="XaX-rr-eHv" secondAttribute="trailing" id="Vig-zN-sBw"/>
+                            <constraint firstItem="AEG-84-pq5" firstAttribute="trailing" secondItem="i5c-7P-ure" secondAttribute="trailing" id="aiw-bj-QX5"/>
+                            <constraint firstItem="Xvq-ij-89W" firstAttribute="top" secondItem="AEG-84-pq5" secondAttribute="top" id="fpe-el-w4a"/>
+                            <constraint firstItem="XaX-rr-eHv" firstAttribute="leading" secondItem="AEG-84-pq5" secondAttribute="leading" id="qcU-QE-Ntz"/>
+                            <constraint firstAttribute="trailing" secondItem="Xvq-ij-89W" secondAttribute="trailing" id="taY-ya-0a5"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="book" catalog="system" selectedImage="book.fill" id="gdn-Bj-HhJ"/>
                     <navigationItem key="navigationItem" title="Comics" id="tgi-hR-5us"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="btnFilter" destination="Xvq-ij-89W" id="PCB-tJ-TZt"/>
+                        <outlet property="collectionView" destination="i5c-7P-ure" id="xGK-CB-ckC"/>
+                        <outlet property="searchBar" destination="XaX-rr-eHv" id="uPV-oU-ApH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ibc-vg-e47" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1644" y="424"/>
+            <point key="canvasLocation" x="1649" y="435"/>
         </scene>
     </scenes>
     <resources>
         <image name="book" catalog="system" width="128" height="99"/>
         <image name="book.fill" catalog="system" width="128" height="95"/>
+        <image name="camera.filters" catalog="system" width="128" height="116"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">

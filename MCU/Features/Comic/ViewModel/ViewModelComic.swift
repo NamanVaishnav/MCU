@@ -1,24 +1,40 @@
 //
-//  ViewModelCharacter.swift
+//  ViewModelComic.swift
 //  MCU
 //
-//  Created by Naman Vaishnav on 28/06/22.
+//  Created by Naman Vaishnav on 29/06/22.
 //
 
 import Foundation
 import Moya
 
-class ViewModelCharacter {
+enum FilterType: String{
+    case lastWeek
+    case thisWeek
+    case nextWeek
+    case thisMonth
+}
+
+class ViewModelComic {
     
+    /// used to determine whether data is being fetch from server or not
     var isFetching: Bool = false
+    /// offset will be the integer of amout of data which has been already rendered on UI
     var offset = 0
+    /// list of data which are avaliable on server
     var totalListOnServerCount = 0 // it must be returned from server
+    /// size of response which we required in single request
     var pageSize = 10 // get 10 objects for instance
-    var arrCharacters: [CharacterResult] = []
+    /// list of characters which will be filled from network response
+    var arrCharacters: [ComicResult] = []
+    /// network call cancellation
     var characterCancellation: Cancellable?
     
-    
-    func getCharacters(searchCharacter searchQuery: String = "", completion: @escaping (_ arrCharacters:[CharacterResult]) -> Void) {
+    /// fetch list of MCU comics from network
+    /// - Parameters:
+    ///   - searchQuery: search reseult which need to be requested by end user
+    ///   - completion: handler which will get invoke once response arrived
+    func getComics(searchCharacter searchQuery: String = "", forFilter filter: FilterType = .thisMonth, completion: @escaping (_ arrComic:[ComicResult]) -> Void) {
         // return from function if already fetching list
         guard !isFetching else {return}
         if offset == 0 {
@@ -26,12 +42,12 @@ class ViewModelCharacter {
             self.arrCharacters.removeAll()
         }
         isFetching = true
-        characterCancellation = Network.request(target: .characters(pageSize, offset, searchQuery), resultType: ModelCharacter.self) { result in
+        characterCancellation = Network.request(target: .comics(pageSize, offset, searchQuery, filter.rawValue), resultType: ModelComic.self) { result in
             self.isFetching = false
             switch result {
             case .success(let response, let success):
                 if success {
-                    guard let objResponse = response as? ModelCharacter else { return }
+                    guard let objResponse = response as? ModelComic else { return }
                     self.totalListOnServerCount = objResponse.data?.total ?? 0
                     if let result = objResponse.data?.results {
                         if self.offset == 0 {

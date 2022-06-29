@@ -17,10 +17,10 @@ class CharacterCell: UICollectionViewCell {
         setupView()
     }
     
+    /// setup view for character cell
     fileprivate func setupView() {
         imgView.layer.cornerRadius = 12.0
         imgView.clipsToBounds = true
-        
         btnName.setTitleColor(.black, for: .normal)
         btnName.titleLabel?.adjustsFontSizeToFitWidth = true
         btnName.titleLabel?.autoresizesSubviews = true
@@ -31,8 +31,6 @@ class CharacterCell: UICollectionViewCell {
         btnName.titleLabel?.lineBreakMode = .byWordWrapping
         btnName.titleLabel?.numberOfLines = 0
         btnName.setBackgroundImage(UIImage(named: "bg-cell-title"), for: .normal)
-
         btnName.titleEdgeInsets = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
-        
     }
 }
